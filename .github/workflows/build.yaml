@@ -24,7 +24,7 @@ jobs:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
-          ${{ runner.os }}-buildx-
+            ${{ runner.os }}-buildx-
 
       - name: Build And Push Docker Image
         uses: docker/build-push-action@v2
