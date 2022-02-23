@@ -20,9 +20,9 @@ FROM nginx:stable-alpine
 
 RUN mkdir /usr/share/nginx/buffer
 
-COPY --from=build /app/.next /usr/share/nginx/buffer
+COPY --from=builder /app/.next /usr/share/nginx/buffer
 
-COPY --from=build /app/deploy.sh /usr/share/nginx/buffer
+COPY --from=builder /app/deploy.sh /usr/share/nginx/buffer
 
 RUN chmod +x /usr/share/nginx/buffer/deploy.sh
 
