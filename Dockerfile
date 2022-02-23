@@ -22,15 +22,10 @@ RUN mkdir /usr/share/nginx/buffer
 
 COPY --from=builder /app/.next /usr/share/nginx/buffer
 
-COPY --from=builder /app/deploy.sh /usr/share/nginx/buffer
-
-RUN chmod +x /usr/share/nginx/buffer/deploy.sh
-
-RUN cd /usr/share/nginx/buffer && ./deploy.sh
-
-RUN mkdir /usr/share/nginx/log
-
-RUN rm /etc/nginx/conf.d/default.conf
+# deployment
+# COPY --from=builder /app/deploy.sh /usr/share/nginx/buffer
+# RUN chmod +x /usr/share/nginx/buffer/deploy.sh
+# RUN cd /usr/share/nginx/buffer && ./deploy.sh
 
 COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
