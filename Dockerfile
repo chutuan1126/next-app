@@ -32,7 +32,7 @@ RUN mkdir /usr/share/nginx/log
 
 RUN rm /etc/nginx/conf.d/default.conf
 
-COPY nginx/nginx.conf /etc/nginx/conf.d
+COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 # with ReactJS
 # COPY --from=builder /app/build /usr/share/nginx/html
