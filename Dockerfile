@@ -38,4 +38,4 @@ EXPOSE 8080
 # run nginx
 # CMD ["nginx", "-g", "daemon off;"]
 
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
