@@ -35,4 +35,7 @@ COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 8080
 
-CMD ["nginx", "-g", "daemon off;"]
+# run nginx
+# CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["yarn", "start"]
